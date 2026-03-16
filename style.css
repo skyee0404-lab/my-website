@@ -488,3 +488,104 @@ footer {
   width: 100%;
   margin-top: auto;
 }
+/* =========================================
+   MOBILE RESPONSIVE SYSTEM (Media Queries)
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* 1. Header & Navigation Adjustment */
+  header {
+    padding: 15px 5%;
+  }
+
+  .menu-btn {
+    display: block; /* Ipakita ang hamburger icon (☰) */
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  nav {
+    display: none; /* Itago ang links sa simula */
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--primary);
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 1000;
+    transition: var(--transition);
+  }
+
+  /* Lalabas ang menu kapag pinindot ang ☰ */
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+  }
+
+  /* 2. Layout Transformations (Gawing Single Column) */
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .stats-container, 
+  .announcement-container, 
+  .program-grid, 
+  .form-grid,
+  .contact-container {
+    grid-template-columns: 1fr !important; /* Lahat ng columns magiging isa lang */
+    gap: 20px;
+  }
+
+  /* 3. Spacing & Sizing */
+  section {
+    padding: 60px 5% !important;
+  }
+
+  .hero-actions {
+    flex-direction: column; /* Magpapatung-patong ang buttons */
+    width: 100%;
+  }
+
+  .btn-enroll, .btn-passers {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 4. Table Optimization (Top Passers) */
+  .results-table-section {
+    overflow-x: auto; /* Pwedeng i-scroll pakanan ang table sa phone */
+    padding: 10px;
+  }
+
+  table {
+    min-width: 500px; /* Siguradong hindi magsisiksikan ang text sa table */
+    font-size: 0.9rem;
+  }
+
+  /* 5. Form Adjustments (Apply Now Page) */
+  .apply-container {
+    padding: 20px;
+  }
+
+  .dual {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Dagdag na Touch-friendly elements */
+.menu-btn:active {
+  transform: scale(0.9);
+}
+
+input, select, textarea {
+  font-size: 16px !important; /* Para hindi mag-zoom ang iPhone kapag nag-tatype */
+}
