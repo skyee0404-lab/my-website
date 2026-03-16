@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Passers | Salsal University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+      <div class="logo">akin tong school nato</div>
+      <nav id="navMenu">
+        <a href="index.html" class="nav-link">Home</a> 
+        <a href="top-passers.html" class="nav-link active-link">Top Passers</a>
+        <a href="programs.html" class="nav-link">Programs</a>
+        <a href="announcements.html" class="nav-link">Announcements</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <main>
+      <section class="passers-hero visible">
+        <div class="program-badge">AY 2026 2027</div>
+        <h1>College Admission Results</h1>
+        <p>Recognizing the academic excellence of our top successful examinees.</p>
+        
+        <div class="search-wrapper">
+          <input type="text" id="passerSearch" onkeyup="filterPassers()" placeholder="Search by name, rank, or strand...">
+          <span class="search-icon" style="position: absolute; left: 20px; top: 18px; opacity: 0.5;">🔍</span>
+        </div>
+      </section>
+
+      <section class="results-table-section visible">
+        <div class="table-container">
+          <table id="passersTable">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Full Name</th>
+                <th>Strand</th>
+                <th>Admission Rating</th>
+              </tr>
+            </thead>
+            <tbody id="passersBody">
+              </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Salsal University. All rights reserved.</p>
+      <p>123 School Address St., City, Country</p>
+    </footer>
+
+    <script>
+      // DATA GENERATOR PARA SA 100 PASSERS
+      const strands = ["ICT", "ABM", "HUMSS"];
+      const firstNames = ["James", "Maria", "John", "Princess", "Robert", "Angel", "Michael", "Jovelyn", "David", "Rowena"];
+      const lastNames = ["Reyes", "Garcia", "Tan", "Cruz", "Bautista", "Santos", "Lopez", "Dela Cruz", "Villanueva", "Lim"];
+      
+      const passersBody = document.getElementById("passersBody");
+      let htmlRows = "";
+
+      // Rank 1: JM Oro (Static)
+      htmlRows += `
+        <tr style="background: rgba(212, 175, 55, 0.08); font-weight: 700;">
+          <td>1</td>
+          <td>JM Oro</td>
+          <td>ICT</td>
+          <td class="rating">99.85%</td>
+        </tr>
+      `;
+
+      // Loop para i-generate ang Rank 2 hanggang 100
+      for (let i = 2; i <= 100; i++) {
+        const randomFirst = firstNames[Math.floor(Math.random() * firstNames.length)];
+        const randomLast = lastNames[Math.floor(Math.random() * lastNames.length)];
+        const randomStrand = strands[Math.floor(Math.random() * strands.length)];
+        const randomRating = (99 - (i * 0.1)).toFixed(2); // Dahan dahang bumababa ang rating base sa rank
+
+        htmlRows += `
+          <tr>
+            <td>${i}</td>
+            <td>${randomFirst} ${randomLast}</td>
+            <td>${randomStrand}</td>
+            <td class="rating">${randomRating}%</td>
+          </tr>
+        `;
+      }
+
+      passersBody.innerHTML = htmlRows;
+
+      // SEARCH FUNCTION
+      function filterPassers() {
+        const input = document.getElementById("passerSearch");
+        const filter = input.value.toUpperCase();
+        const table = document.getElementById("passersTable");
+        const tr = table.getElementsByTagName("tr");
+
+        for (let i = 1; i < tr.length; i++) {
+          let text = tr[i].textContent || tr[i].innerText;
+          tr[i].style.display = text.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+        }
+      }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Salsal University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+      <div class="logo">akin tong school nato</div>
+      <nav id="navMenu">
+        <a href="index.html" class="nav-link">Home</a> 
+        <a href="about.html" class="nav-link">About</a>
+        <a href="programs.html" class="nav-link">Programs</a>
+        <a href="announcements.html" class="nav-link">Announcements</a>
+        <a href="contact.html" class="nav-link active-link">Contact</a>
+        
+      </nav>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <section class="contact">
+      <div class="contact-container">
+        <div class="contact-info-sidebar">
+          <h3>Get in Touch</h3>
+          <p style="margin: 20px 0; opacity: 0.8;">Our support team is available from 8:00 AM to 5:00 PM, Monday to Friday.</p>
+          <div style="margin-top: 40px;">
+            <p style="color: var(--secondary); font-weight: 700;">Email Address</p>
+            <p>info@university.edu.ph</p>
+            <br>
+            <p style="color: var(--secondary); font-weight: 700;">Phone Number</p>
+            <p>(02) 1234-5678</p>
+            <br>
+            <p style="color: var(--secondary); font-weight: 700;">Campus Location</p>
+            <p>123 School Address St., City, Country</p>
+          </div>
+        </div>
+
+        <div class="contact-form-area">
+          <form class="contact-form">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter full name" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="How can we help you?" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn-enroll" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Salsal University. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
