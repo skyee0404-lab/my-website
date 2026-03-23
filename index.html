@@ -3,63 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Salsal University</title>
+    <title>Home | Salsal University</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-  <div class="logo">Salsal University</div>
-  <nav id="navMenu">
-    <a href="index.html" class="nav-link">Home</a> 
-    <a href="about.html" class="nav-link">About</a>
-    <a href="programs.html" class="nav-link">Programs</a>
-    <a href="announcements.html" class="nav-link">Announcements</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-  </nav>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-</header>
+      <div class="logo">akin tong school nato</div>
+      <nav id="navMenu">
+        <a href="index.html" class="nav-link active-link">Home</a>      
+        <a href="about.html" class="nav-link">About</a>
+        <a href="programs.html" class="nav-link">Programs</a>
+        <a href="announcements.html" class="nav-link">Announcements</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        
+      </nav>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </header>
 
-    <section class="contact">
-      <div class="contact-container">
-        <div class="contact-info-sidebar">
-          <h3>Get in Touch</h3>
-          <p style="margin: 20px 0; opacity: 0.8;">Our support team is available from 8:00 AM to 5:00 PM, Monday to Friday.</p>
-          <div style="margin-top: 40px;">
-            <p style="color: var(--secondary); font-weight: 700;">Email Address</p>
-            <p>info@university.edu.ph</p>
-            <br>
-            <p style="color: var(--secondary); font-weight: 700;">Phone Number</p>
-            <p>(02) 1234-5678</p>
-            <br>
-            <p style="color: var(--secondary); font-weight: 700;">Campus Location</p>
-            <p>123 School Address St., City, Country</p>
-          </div>
+    <section class="hero visible">
+      <div class="hero-content">
+        <div class="program-badge" style="background: rgba(212, 175, 55, 0.15)">Kalinangan at Karangalan</div>
+        <h1>Building the Leaders of Tomorrow</h1>
+        <p>Salsal University delivers top-tier education focused on innovation and academic excellence.</p>
+        <div class="hero-actions">
+          <a href="apply.html" class="btn-enroll">Enroll Now</a>
+          <a href="top-passers.html" class="btn-passers">View Top Passers</a>
         </div>
+      </div>
+    </section>
 
-        <div class="contact-form-area">
-          <form class="contact-form">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-              <div class="form-group">
-                <label>Your Name</label>
-                <input type="text" placeholder="Enter full name" required>
-              </div>
-              <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="Enter email" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Message</label>
-              <textarea placeholder="How can we help you?" rows="6" required></textarea>
-            </div>
-            <button type="submit" class="btn-enroll" style="width: 100%;">Send Message</button>
-          </form>
+    <section class="achievements visible">
+      <div class="stats-container">
+        <div class="stat-item">
+          <h2>98%</h2>
+          <p>Overall Passing Rate</p>
+        </div>
+        <div class="stat-item">
+          <h2>TOP 1</h2>
+          <p>Regional Tech Excellence</p>
+        </div>
+        <div class="stat-item">
+          <h2>500+</h2>
+          <p>Industry Partners</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-grid visible">
+      <div class="announcement-container">
+        <div class="card">
+          <div class="card-line"></div>
+          <h2>Why Choose Us?</h2>
+          <p>Our curriculum is designed with global standards, ensuring every student is ready for the challenges of the 4th Industrial Revolution.</p>
+        </div>
+        <div class="card">
+          <div class="card-line"></div>
+          <h2>Holistic Growth</h2>
+          <p>Beyond academics, we foster leadership, sportsmanship, and ethical values through our diverse student organizations.</p>
         </div>
       </div>
     </section>
 
     <footer>
       <p>&copy; 2026 Salsal University. All rights reserved.</p>
+      <p>123 School Address St., City, Country</p>
     </footer>
     <script src="script.js"></script>
 </body>
